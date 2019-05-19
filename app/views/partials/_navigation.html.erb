@@ -2,19 +2,7 @@
 	<nav class="be-red white large-padding">
 		<ul class="no-list row center-xs middle-xs">
 			<li class="col-md">
-				<h1 class="no-margin" id="logo">Logo</h1>
-			</li>
-			<li class="col-md">
-				<%= link_to "Inicio", root_path %>
-			</li>
-			<li class="col-md">
-				Diseño
-			</li>
-			<li class="col-md">
-				Programacion
-			</li>
-			<li class="col-md">
-				Tecnologia
+				<h1 class="no-margin" id="logo"><%= link_to "Logo", root_path %></h1>
 			</li>
       <% if user_signed_in? %>
         <li class="col-md">
