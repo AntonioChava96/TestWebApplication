@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <!--<div class="field">
     <%= form.label :user_id %>
     <%= form.text_field :user_id, id: :dish_user_id %>
-  </div>
+  </div>-->
 
   <div class="field">
     <%= form.label :restaurant_id %>
-    <%= form.text_field :restaurant_id, id: :dish_restaurant_id %>
+    <%= form.collection_select :restaurant_id, Restaurant.all, :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :dish_group %>
-    <%= form.text_field :dish_group, id: :dish_dish_group %>
+    <%= form.select :dish_group,  [['Entrees', 1], ['Soups & Salads', 2], ['Desserts', 3], ['Drinks', 4]] %>
   </div>
 
   <div class="field">
@@ -38,7 +38,11 @@
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price, id: :dish_price %>
+    <%= form.number_field :price, id: :dish_price, step: :any %>
+  </div>
+
+  <div class="field">
+    Foto: <%= form.file_field :photo %>
   </div>
 
   <div class="actions">

@@ -5,7 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
+      <!--<th>User</th>-->
+      <th>Fecha Creación</th>
       <th>Name</th>
       <th>Description</th>
       <th>Address</th>
@@ -17,7 +18,8 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= restaurant.user.email %></td>
+        <!--<td><%= restaurant.user.email %></td>-->
+        <td><%= restaurant.created_at %></td>
         <td><%= restaurant.name %></td>
         <td><%= restaurant.description %></td>
         <td><%= restaurant.address %></td>

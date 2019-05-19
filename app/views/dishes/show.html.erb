@@ -2,12 +2,16 @@
 
 <p>
   <strong>User:</strong>
-  <%= @dish.user %>
+  <%= @dish.user.email %>
 </p>
+
+<div class="field">
+  <%= image_tag @dish.photo.url() %>
+</div>
 
 <p>
   <strong>Restaurant:</strong>
-  <%= @dish.restaurant %>
+  <%= @dish.restaurant.name %>
 </p>
 
 <p>

@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
   # GET /restaurants
@@ -70,6 +70,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:user_id, :name, :description, :address, :phone)
+      params.require(:restaurant).permit(:user_id, :name, :description, :address, :phone, :logo)
     end
 end

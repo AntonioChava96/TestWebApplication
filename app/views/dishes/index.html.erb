@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>User</th>
+      <!--<th>User</th>-->
       <th>Restaurant</th>
       <th>Dish group</th>
       <th>Name</th>
@@ -18,8 +18,8 @@
   <tbody>
     <% @dishes.each do |dish| %>
       <tr>
-        <td><%= dish.user %></td>
-        <td><%= dish.restaurant %></td>
+        <!--<td><%= dish.user.email %></td>-->
+        <td><%= dish.restaurant.name %></td>
         <td><%= dish.dish_group %></td>
         <td><%= dish.name %></td>
         <td><%= dish.description %></td>

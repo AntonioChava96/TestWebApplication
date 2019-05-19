@@ -1,11 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<% unless @restaurant.user.nil? %>
 <p>
   <strong>User:</strong>
   <%= @restaurant.user.email %>
 </p>
-<%end%>
+
+<div class="field">
+  <%= image_tag @restaurant.logo.url() %>
+</div>
 
 <p>
   <strong>Name:</strong>

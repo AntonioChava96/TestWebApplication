@@ -1,5 +1,5 @@
 class DishesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
 
   # GET /dishes
@@ -25,7 +25,7 @@ class DishesController < ApplicationController
   # POST /dishes
   # POST /dishes.json
   def create
-    @dish = Dish.new(dish_params)
+    @dish = current_user.dishes.new(dish_params)
 
     respond_to do |format|
       if @dish.save
@@ -70,6 +70,6 @@ class DishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
-      params.require(:dish).permit(:user_id, :restaurant_id, :dish_group, :name, :description, :price)
+      params.require(:dish).permit(:user_id, :restaurant_id, :dish_group, :name, :description, :price, :photo)
     end
 end
