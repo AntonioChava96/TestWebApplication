@@ -17,23 +17,23 @@
   </div>-->
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :restaurant_name %>
+    <%= form.label "Nombre" %>
+    <%= form.text_field :name, id: :restaurant_name, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :restaurant_description %>
+    <%= form.label "Descripción" %>
+    <%= form.text_area :description, id: :restaurant_description, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :restaurant_address %>
+    <%= form.label "Dirección" %>
+    <%= form.text_field :address, id: :restaurant_address, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone, id: :restaurant_phone %>
+    <%= form.label "Teléfono" %>
+    <%= form.text_field :phone, id: :restaurant_phone, class:"form-control" %>
   </div>
 
   <div class="field">
@@ -41,6 +41,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Guardar", class:"btn be-red white" %>
   </div>
 <% end %>

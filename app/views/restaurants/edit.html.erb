@@ -1,6 +1,10 @@
-<h1>Editing Restaurant</h1>
+<div class="cont">
+	<h1>Edición de restaurante</h1>
 
-<%= render 'form', restaurant: @restaurant %>
+	<%= render 'form', restaurant: @restaurant %>
 
-<%= link_to 'Show', @restaurant %> |
-<%= link_to 'Back', restaurants_path %>
+	<div style="float: right;margin-bottom: 25px;">
+		<%= link_to '<i class="fas fa-eye"></i>'.html_safe, @restaurant, style:"margin-right: 15px;" %>
+		<%= link_to '<i class="fas fa-long-arrow-alt-left"></i>'.html_safe, restaurants_path %>
+	</div>
+</div>

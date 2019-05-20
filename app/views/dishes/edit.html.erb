@@ -1,6 +1,11 @@
-<h1>Editing Dish</h1>
+<div class="cont">
 
-<%= render 'form', dish: @dish %>
+	<h1>Edición de platillo</h1>
 
-<%= link_to 'Show', @dish %> |
-<%= link_to 'Back', dishes_path %>
+	<%= render 'form', dish: @dish %>
+
+	<div style="float: right;margin-bottom: 25px;">
+		<%= link_to '<i class="fas fa-eye"></i>'.html_safe, @dish, style:"margin-right: 15px;" %>
+		<%= link_to '<i class="fas fa-long-arrow-alt-left"></i>'.html_safe, dishes_path %>
+	</div>
+</div>

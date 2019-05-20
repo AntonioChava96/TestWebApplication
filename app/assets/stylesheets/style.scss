@@ -10,6 +10,7 @@ html,body {
 	cursor: pointer;
 	font-size: 1.2em;
 	padding: 10px 12px;
+	text-transform: none;
 }
 .no-list {
 	list-style: none;
@@ -50,4 +51,55 @@ a,a:visited {
 }
 .text-left {
 	text-align: left;
+}
+.img {
+	width: 350px;
+}
+@media (max-width: 600px){
+	.img {
+		width: 200px;
+	}
+}
+.fas {
+    font-size: 30px;
+}
+.fa-edit::before {
+    color: #009efd;
+}
+.fa-trash-alt::before {
+	color: #BF0413;
+}
+.btnAdd {
+	font-size: 22px;
+	font-weight: 500;
+	background-color: #4cce4d;
+	color: #fff !important;
+	padding: 2px 5px;
+	border-radius: 10px;
+	position: absolute;
+	top: 3px;
+	right: 0px;
+}
+.cont {
+	width: 80%; 
+	margin: 0px auto;
+	position: relative;
+}
+.table {
+	width: 100%;
+}
+table > thead > tr > th {
+    border-bottom: none;
+    background-color: #6a6c6f;
+    color: #FFF;
+}
+table > tbody > tr > td {
+    border: 1px solid #ddd;
+}
+.contImg {
+    float: left;
+    margin-right: 20px;
+}
+.hidden {
+	display: none;
 }

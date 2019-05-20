@@ -1,33 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="cont">
 
-<p>
-  <strong>User:</strong>
-  <%= @restaurant.user.email %>
-</p>
+  <!--<p id="notice"><%= notice %></p>-->
 
-<div class="field">
-  <%= image_tag @restaurant.logo.url() %>
+  <!--<p>
+    <strong>User:</strong>
+    <%= @restaurant.user.email %>
+  </p>-->
+
+  <div class="contImg">
+    <%= image_tag @restaurant.logo.url(), class:"img" %>
+  </div>
+
+  <p>
+    <strong>Nombre:</strong>
+    <%= @restaurant.name %>
+  </p>
+
+  <p>
+    <strong>Descripción:</strong>
+    <%= @restaurant.description %>
+  </p>
+
+  <p>
+    <strong>Dirección:</strong>
+    <%= @restaurant.address %>
+  </p>
+
+  <p>
+    <strong>Teléfono:</strong>
+    <%= @restaurant.phone %>
+  </p>
+
+  <div style="float: right;">
+    <%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_restaurant_path(@restaurant), style:"margin-right: 15px;" %>
+    <%= link_to '<i class="fas fa-long-arrow-alt-left"></i>'.html_safe, restaurants_path %>
+  </div>
 </div>
-
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @restaurant.description %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @restaurant.phone %>
-</p>
-
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>

@@ -1,37 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="cont">
 
-<h1>Restaurants</h1>
+  <!--<p id="notice"><%= notice %></p>-->
 
-<table>
-  <thead>
-    <tr>
-      <!--<th>User</th>-->
-      <th>Fecha Creación</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1>Restaurantes</h1>
+  <%= link_to '+ Agregar', new_restaurant_path, class:"btnAdd" %>
 
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
+  <table class="table">
+    <thead>
       <tr>
-        <!--<td><%= restaurant.user.email %></td>-->
-        <td><%= restaurant.created_at %></td>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.description %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.phone %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--<th>User</th>-->
+        <th>Fecha Creación</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <!--<th>Dirección</th>
+        <th>Teléfono</th>-->
+        <th colspan="2">Acciones</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Restaurant', new_restaurant_path %>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <!--<td><%= restaurant.user.email %></td>-->
+          <td><%= link_to restaurant.created_at, restaurant %></td>
+          <td><%= link_to restaurant.name, restaurant %></td>
+          <td><%= link_to restaurant.description, restaurant %></td>
+          <!--<td><%= restaurant.address %></td>
+          <td><%= restaurant.phone %></td>
+          <td><%= link_to 'Show', restaurant %></td>-->
+          <td><%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_restaurant_path(restaurant) %></td>
+          <td><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, restaurant, method: :delete, data: { confirm: '¿Estás seguro?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

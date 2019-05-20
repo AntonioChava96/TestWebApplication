@@ -17,28 +17,28 @@
   </div>-->
 
   <div class="field">
-    <%= form.label :restaurant_id %>
+    <%= form.label "Restaurante" %>
     <%= form.collection_select :restaurant_id, Restaurant.all, :id, :name %>
   </div>
 
   <div class="field">
-    <%= form.label :dish_group %>
-    <%= form.select :dish_group,  [['Entrees', 1], ['Soups & Salads', 2], ['Desserts', 3], ['Drinks', 4]] %>
+    <%= form.label "Grupo de platillo" %>
+    <%= form.select :dish_group,  [['Entrees', 'Entrees'], ['Soups & Salads', 'Soups & Salads'], ['Desserts', 'Desserts'], ['Drinks', 'Drinks']] %>
   </div>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :dish_name %>
+    <%= form.label "Nombre" %>
+    <%= form.text_field :name, id: :dish_name, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :dish_description %>
+    <%= form.label "Descripción" %>
+    <%= form.text_area :description, id: :dish_description, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price, id: :dish_price, step: :any %>
+    <%= form.label "Precio" %>
+    <%= form.number_field :price, id: :dish_price, step: :any, class:"form-control" %>
   </div>
 
   <div class="field">
@@ -46,6 +46,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Guardar", class:"btn be-red white" %>
   </div>
 <% end %>

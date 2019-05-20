@@ -1,5 +1,10 @@
-<h1>New Order</h1>
+<div class="cont">
 
-<%= render 'form', order: @order %>
+	<h1>Nueva orden</h1>
 
-<%= link_to 'Back', orders_path %>
+	<%= render 'form', order: @order %>
+
+	<div style="float: right;">
+		<%= link_to '<i class="fas fa-long-arrow-alt-left"></i>'.html_safe, orders_path %>
+	</div>
+</div>

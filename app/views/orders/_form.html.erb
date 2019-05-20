@@ -17,36 +17,36 @@
   </div>-->
 
   <div class="field">
-    <%= form.label :restaurant_id %>
-    <%= form.text_field :restaurant_id, id: :order_restaurant_id %>
+    <%= form.label "Restaurante" %>
+    <%= form.collection_select :restaurant_id, Restaurant.all, :id, :name %>
   </div>
 
   <div class="field">
-    <%= form.label :dish_id %>
-    <%= form.text_field :dish_id, id: :order_dish_id %>
+    <%= form.label "Platillo" %>
+    <%= form.collection_select :dish_id, Dish.all, :id, :name %>
   </div>
 
-  <div class="field">
+  <div class="field hidden">
     <%= form.label :date %>
     <%= form.datetime_select :date, id: :order_date %>
   </div>
 
   <div class="field">
-    <%= form.label :sub_total %>
-    <%= form.text_field :sub_total, id: :order_sub_total %>
+    <%= form.label "Sub total" %>
+    <%= form.text_field :sub_total, readonly: :true, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :taxes %>
-    <%= form.text_field :taxes, id: :order_taxes %>
+    <%= form.label "Impuestos" %>
+    <%= form.text_field :taxes, readonly: :true, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :total %>
-    <%= form.text_field :total, id: :order_total %>
+    <%= form.label "Total" %>
+    <%= form.text_field :total, readonly: :true, class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Guardar", class:"btn be-red white" %>
   </div>
 <% end %>
