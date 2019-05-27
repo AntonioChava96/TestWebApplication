@@ -54,6 +54,8 @@ a,a:visited {
 }
 .img {
 	width: 350px;
+	float: left;
+	margin: 0px 20px;
 }
 @media (max-width: 600px){
 	.img {
@@ -87,6 +89,7 @@ a,a:visited {
 }
 .table {
 	width: 100%;
+	margin-bottom: 60px;
 }
 table > thead > tr > th {
     border-bottom: none;
@@ -96,10 +99,13 @@ table > thead > tr > th {
 table > tbody > tr > td {
     border: 1px solid #ddd;
 }
-.contImg {
-    float: left;
-    margin-right: 20px;
+.contImgTxt {
+    height: 300px;
 }
 .hidden {
 	display: none;
+}
+.float_btn{
+	float: right;
+	margin-bottom: 60px;
 }

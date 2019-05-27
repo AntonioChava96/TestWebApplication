@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_dish
 
   # GET /orders
   # GET /orders.json
@@ -26,10 +27,11 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = current_user.order.new(order_params)
+    @order.dish = @dish
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to @order.dish, notice: 'La orden fue creada con éxito.' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -43,7 +45,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order.dish, notice: 'La orden fue modificada con éxito.' }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -57,12 +59,15 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to @dish, notice: 'La orden fue eliminada con éxito.' }
       format.json { head :no_content }
     end
   end
 
   private
+    def set_dish
+      @dish = Dish.find(params[:dish_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_order
       @order = Order.find(params[:id])

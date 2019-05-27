@@ -1,10 +1,10 @@
-<%= form_with(model: order, local: true) do |form| %>
-  <% if order.errors.any? %>
+<%= form_with(model: [@dish, @order], local: true) do |form| %>
+  <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
       <ul>
-      <% order.errors.full_messages.each do |message| %>
+      <% @order.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -26,9 +26,14 @@
     <%= form.collection_select :dish_id, Dish.all, :id, :name %>
   </div>
 
-  <div class="field hidden">
-    <%= form.label :date %>
-    <%= form.datetime_select :date, id: :order_date %>
+  <div class="field">
+    <%= form.label "Cantidad" %>
+    <%= form.text_field "Cantidad" %>
+  </div>
+
+  <div class="field ">
+    <%= form.label "Fecha" %>
+    <%= form.datetime_select :date, default: Date.today %>
   </div>
 
   <div class="field">
@@ -47,6 +52,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit "Guardar", class:"btn be-red white" %>
+    <%= form.submit "Ordenar", class:"btn be-red white" %>
   </div>
 <% end %>
